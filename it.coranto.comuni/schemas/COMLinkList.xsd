@@ -1,0 +1,33 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMLinkNested.xsd" />
+
+	<xsd:element name="COMLinkListData" type="OpenCmsCOMLinkListData"/>
+
+	<xsd:complexType name="OpenCmsCOMLinkListData">
+		<xsd:sequence>
+			<xsd:element name="COMLinkList" type="OpenCmsCOMLinkList" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMLinkList">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" minOccurs="1" maxOccurs="1" />		
+			<xsd:element name="Link" type="OpenCmsCOMLinkNested" minOccurs="1" maxOccurs="7" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<mappings>
+				<mapping element="Title" mapto="property:Title" />
+			</mappings>		
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

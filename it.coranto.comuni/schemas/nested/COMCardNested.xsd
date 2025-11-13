@@ -1,0 +1,50 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMLinkNested.xsd" />
+
+	<xsd:element name="COMCardNestedData" type="OpenCmsCOMCardNestedData"/>
+
+	<xsd:complexType name="OpenCmsCOMCardNestedData">
+		<xsd:sequence>
+			<xsd:element name="COMCardNested" type="OpenCmsCOMCardNested" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMCardNested">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" />
+			<xsd:element name="Abstract" type="OpenCmsHtml" />
+			<xsd:element name="Link" type="OpenCmsCOMLinkNested" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<mappings>
+				<mapping element="Title" mapto="property:Title" />
+			</mappings>	
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Title</PropertyName>					
+					<Widget>string</Widget>
+					<RuleRegex>.{0,70}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Massimo 70 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Abstract</PropertyName>
+					<Widget>TextareaWidget</Widget>
+					<RuleRegex>.{0,255}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Massimo 255 caratteri</Error>
+				</Setting>
+			</FieldSettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

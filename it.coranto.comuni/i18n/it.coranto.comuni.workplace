@@ -1,0 +1,351 @@
+# COMNews
+type.COMNews.description=Tipologia che struttura le informazioni relative a agli aggiornamenti d un comune
+type.COMNews.formatter=Notizia
+type.COMNews.name=Notizia
+type.COMNews.title=Notizia
+
+label.COMNews.Title=Titolo della notizia
+label.COMNews.Title.help=Il titolo della notizia, del comunicato o dell'avviso
+label.COMNews.Type=Tipo di notizia
+label.COMNews.Type.help=Il tipo di notizia secondo la tassonomia prevista
+label.COMNews.Abstract=Descrizione breve
+label.COMNews.Abstract.help=Descrizione sintentica della notizia
+label.COMNews.Date=Data della notizia
+label.COMNews.Date.help=Data di pubblicazione della notizia
+label.COMNews.Argument=Argomenti
+label.COMNews.Argument.help=Argomenti collegabili
+label.COMNews.Image=Immagine
+label.COMNews.Image.help=Immagine principale della notizia
+label.COMNews.Text=Testo completo della notizia
+label.COMNews.Text.help=Testo principale della notizia
+label.COMNews.Attachment=Allegati
+label.COMNews.Attachment.help=Link a schede di documenti o file allegati
+label.COMNews.By=A cura di
+label.COMNews.By.help=Ufficio che ha curato il comunicato
+label.COMNews.ExpirationDate=Data di scadenza
+label.COMNews.ExpirationDate.help=Eventuale data di scadenza (in giorni dalla pubblicazione)
+
+# COMImageNested
+label.COMImageNested.Image=Immagine
+label.COMImageNested.Title=Titolo
+label.COMImageNested.Description=Descrizione
+label.COMImageNested.Caption=Didascalia
+
+# COMOrganizationUnit
+type.COMOrganizationUnit.description=Questa Tipologia descrive la struttura di un'organizzazione comunale funzionale alla creazione di contenuti come uffici o altre unità organizzative
+type.COMOrganizationUnit.formatter=Unità organizzativa
+type.COMOrganizationUnit.name=Unità organizzativa
+type.COMOrganizationUnit.title=Unità organizzativa
+
+label.COMOrganizationUnit.Title=Nome dell'unità organizzativa
+label.COMOrganizationUnit.Title.help=Titolo della struttura (può essere una struttura amministrativa (e quindi un'area o un ufficio), oppure una struttura politica (la giunta comunale, il consiglio comunale, una commissione o altro) oppure una struttura che non rientra nelle precedenti (una biblioteca, un museo, etc...)
+label.COMOrganizationUnit.Abstract=Descrizione breve
+label.COMOrganizationUnit.Abstract.help=Descrizione sintetica della struttura
+label.COMOrganizationUnit.Argument=Argomenti
+label.COMOrganizationUnit.Argument.help=Argomenti di cui si occupa
+label.COMOrganizationUnit.Competency=Competenze
+label.COMOrganizationUnit.Competency.help=Elenco/descrizione dei compiti assegnati alla struttura
+label.COMOrganizationUnit.OrganizationType=Tipo di organizzazione
+label.COMOrganizationUnit.OrganizationType.help=La tipologia di organizzazione secondo la tassonomia prevista
+label.COMOrganizationUnit.OrganizationUnitParent=Unità organizzativa genitore
+label.COMOrganizationUnit.OrganizationUnitParent.help=Se la struttura fa parte di un'Area o altre macro unità, va inserita la struttura principale
+label.COMOrganizationUnit.Person=Persone
+label.COMOrganizationUnit.Person.help=Un link alla scheda persona per ciascuno dei componenti della struttura (ad es. lista assessori se la struttura è politica, lista funzionari se la struttura è amministrativa, e così via...)
+label.COMOrganizationUnit.Service=Servizi offerti
+label.COMOrganizationUnit.Service.help=Relazione con i servizi offerti dalla struttura. Obbligatorio se la pagina è un ufficio.
+label.COMOrganizationUnit.Venue=Sede principale
+label.COMOrganizationUnit.Venue.help=Relazione con un luogo (sede fisica principale)
+label.COMOrganizationUnit.ContactPoint=Contatti
+label.COMOrganizationUnit.ContactPoint.help=Eventuali contatti dell'unità organizzativa
+label.COMOrganizationUnit.Attachment=Allegati
+label.COMOrganizationUnit.Attachment.help=Elenco di documenti allegati alla struttura
+
+# COMContactPoint
+type.COMContactPoint.description=Questa Tipologia descrive la struttura di un punto di contatto, che può essere fisico, virtuale o digitale
+type.COMContactPoint.formatter=Punto di contatto
+type.COMContactPoint.name=Punto di contatto
+type.COMContactPoint.title=Punto di contatto
+
+label.COMContactPoint.Title=Titolo punto di contatto
+label.COMContactPoint.Title.help=La label del punto di contatto
+label.COMContactPoint.Type=Tipo punto di contatto
+label.COMContactPoint.Type.help=Un punto di contatto può avere tipi diversi, secondo una tassonomia definita
+label.COMContactPoint.Value=Valore punto di contatto
+label.COMContactPoint.Value.help=Il valore del punto di contatto: il numero compreso di prefisso internazionale (se telefono), l'account (se social network), l'URL (se sito o pagina web), l'indirizzo email (se email)
+
+# COMContactTypeOption
+label.COMContactTypeOption.PhoneNumber=Telefono
+
+# COMContactPointValueNested
+label.COMContactPointValueNested.Email=Email
+label.COMContactPointValueNested.PhoneNumber=Telefono
+label.COMContactPointValueNested.Account=Account
+label.COMContactPointValueNested.Link=URL
+
+type.COMPosition.description=COMPosition - Position
+type.COMPosition.formatter=COMPosition - Position
+type.COMPosition.name=COMPosition - Position
+type.COMPosition.title=COMPosition - Position
+
+# COMPublicPerson
+type.COMPublicPerson.description=Questa Tipologia descrive la struttura delle persone pubbliche che sono salienti per il dominio (sito di un comune), funzionale alla creazione di una scheda persona
+type.COMPublicPerson.formatter=Persona pubblica
+type.COMPublicPerson.name=Persona pubblica
+type.COMPublicPerson.title=Persona pubblica
+
+label.COMPublicPerson.Fullname=Nome e cognome
+label.COMPublicPerson.Fullname.help=Nome e cognome della persona
+label.COMPublicPerson.Assignment=Incarichi
+label.COMPublicPerson.Assignment.help=Collegamenti con gli incarichi
+label.COMPublicPerson.Competency=Competenze
+label.COMPublicPerson.Competency.help=Se Persona Politica, descrizione testuale del ruolo, comprensiva delle deleghe, oppure se Persona Amministrativa, descrizione dei compiti di cui si occupa la persona
+label.COMPublicPerson.Organization=Organizzazioni
+label.COMPublicPerson.Organization.help=Le organizzazioni di cui fa parte (es. Consiglio Comunale; es. Sistemi informativi)
+label.COMPublicPerson.ContactPoint=Punti di contatto
+label.COMPublicPerson.ContactPoint.help=Punti di contatto della persona
+label.COMPublicPerson.TaxReturn=Dichiarazione dei redditi
+label.COMPublicPerson.TaxReturn.help=Obbligatorio per Persona che ha incarichi o cariche politiche: copia dell'ultima dichiarazione dei redditi soggetti all'imposta sui redditi delle persone fisiche Per il soggetto, il coniuge non separato e i parenti entro il secondo grado, ove gli stessi vi consentano (NB: dando eventualmente evidenza del mancato consenso) (NB: è necessario limitare, con appositi accorgimenti a cura dell'interessato o della amministrazione, la pubblicazione dei dati sensibili)
+label.COMPublicPerson.ElectoralExpenses=Spese elettorali
+label.COMPublicPerson.ElectoralExpenses.help=Obbligatorio per Persona che ha incarichi o cariche politiche:: dichiarazione concernente le spese sostenute e le obbligazioni assunte per la propaganda elettorale ovvero attestazione di essersi avvalsi esclusivamente di materiali e di mezzi propagandistici predisposti e messi a disposizione dal partito o dalla formazione politica della cui lista il soggetto ha fatto parte, con l'apposizione della formula «sul mio onore affermo che la dichiarazione corrisponde al vero» (con allegate copie delle dichiarazioni relative a finanziamenti e contributi per un importo che nell'anno superi 5.000 €)
+label.COMPublicPerson.ChangesInEquity=Variazioni situazione patrimoniale
+label.COMPublicPerson.ChangesInEquity.help=Obbligatorio per Persona che ha incarichi o cariche politiche:: attestazione concernente le variazioni della situazione patrimoniale intervenute nell'anno precedente e copia della dichiarazione dei redditi Per il soggetto, il coniuge non separato e i parenti entro il secondo grado, ove gli stessi vi consentano (NB: dando eventualmente evidenza del mancato consenso)
+
+# COMPosition
+label.COMPosition.Title=Titolo carica o incarico
+label.COMPosition.Title.help=Descrizione testuale della carica o incarico/ruolo (Es. Consigliere con delega alla innovazione, Presidente del Consiglio Comunale, direttore sistemi informativi)
+label.COMPosition.Type=Tipo di incarico
+label.COMPosition.Type.help=Classificazione dei tipi di incarico
+label.COMPosition.Abstract=Descrizione
+label.COMPosition.StartOfAssignment=Data inizio incarico
+label.COMPosition.StartOfAssignment.help=Data di inizio dell'incarico. Obbligatorio per i politici, facoltativo per il personale amministrativo.
+
+# COMService
+type.COMService.description=Struttura delle informazioni relative a un servizio pubblico, funzionale alla creazione di una scheda servizio
+type.COMService.formatter=Servizio
+type.COMService.name=Servizio
+type.COMService.title=Servizio
+
+label.COMService.Category=Categoria del servizio
+label.COMService.Category.help=Le materie di interesse del servizio
+label.COMService.Title=Titolo del servizio
+label.COMService.Title.help=Nome del Servizio. Il nome del Servizio deve essere facilmente comprensibile dai cittadini. Il Servizio di raccolta differenziata si chiamerà "Raccolta differenziata". Il Servizio di iscrizione all'asilo nido si chiamerà "Iscrizione asilo nido".
+label.COMService.ServiceState=Stato del servizio
+label.COMService.ServiceState.help=Lo stato del servizio indica l’effettiva fruibilità del Servizio
+label.COMService.ServiceStateMotivation=Motivo dello stato
+label.COMService.ServiceStateMotivation.help=Descrizione testuale del motivo per cui un servizio non è attivo
+label.COMService.Abstract=Descrizione breve
+label.COMService.Abstract.help=Indicare una sintetica descrizione del Servizio utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarezza il Servizio. Non utilizzare un linguaggio ricco di riferimenti normativi.
+label.COMService.WhoNeeds=A chi è rivolto
+label.COMService.WhoNeeds.help=Descrizione testuale dei principali interlocutori del Servizio
+label.COMService.Description=Descrizione estesa
+label.COMService.Description.help=Descrizione estesa e completa del Servizio
+label.COMService.HowTo=Come fare
+label.COMService.HowTo.help=Procedura da seguire per usufruire del Servizio
+label.COMService.Needed=Cosa serve
+label.COMService.Needed.help=Elenco delle cose necessarie per attivare il Servizio. (Documenti necessari, o altro) con le relative istruzioni all'uso ed eventuale link di approfondimento
+label.COMService.Obtain=Cosa si ottiene
+label.COMService.Obtain.help=Uno o più output prodotti dal servizio. Ad es.: "certificato di residenza", o "carta d'identità Tipologia elettronica"
+label.COMService.Deadline=Tempi e scadenze
+label.COMService.Deadline.help=Data di scadenza del Servizio (ad es. "iscrizione asilo nido entro..."). Se il Servizio è diviso in fasi, prevedere un campo per ciascuna fase del Servizio e relativa indicazione dei tempi  (ad es. "iscrizione asilo nido" - data + "esito della domanda" - data)
+label.COMService.Cost=Costi
+label.COMService.Cost.help=Condizioni e termini economici per compleare la procedura di richiesta del Servizio. Ad es. il rinnovo della carta d'idTipologia ha un costo di euro X.
+label.COMService.SubmitRequestOnline=Accedi al servizio digitale
+label.COMService.SubmitRequestOnline.help=Presentare il link per avviare la procedura di fruizione online
+label.COMService.SubmitRequestOffline=Accedi al servizio a sportello
+label.COMService.SubmitRequestOffline.help=Includere le informazioni sulla sede in cui è possibile fruire del servizio e il link alla funzione di prenotazione appuntamento, se disponibile
+label.COMService.FurtherInformation=Ulteriori informazioni
+label.COMService.FurtherInformation.help=Eventuali link a pagine web, siti, servizi esterni all'ambito comunale utili all'erogazione del servizio descritto. 
+label.COMService.Condition=Condizioni di servizio
+label.COMService.Condition.help=File allegato con tutte le condizioni di servizio, incluse eventuali tempi di risposta e obblighi da parte dell'amministrazione comunale.
+label.COMService.Otherdoc=Documenti
+label.COMService.Otherdoc.help=Link alle schede documenti non funzionali al completamento del servizi, ma di semplice supporto
+label.COMService.OrganizationUnitParent=Unità Organizzativa responsabile
+label.COMService.OrganizationUnitParent.help=Link dell'ufficio responsabile dell'erogazione di questo Servizio.
+label.COMService.ContactPoint=Contatti
+label.COMService.ContactPoint.help=I contatti per il servizio.
+label.COMService.Argument=Argomenti
+label.COMService.Argument.help=Argomenti collegabili
+
+# COMSubmitRequestNested
+label.COMSubmitRequestNested.OnlineRequest=Servizio digitale
+label.COMSubmitRequestNested.OfficeRequest=Servizio a sportello
+
+# COMOnlineRequestNested
+label.COMOnlineRequestNested.RequestLink=Link per avviare la procedura di fruizione online
+label.COMOnlineRequestNested.Information=Informazioni
+
+# COMOfficeRequestNested
+label.COMOfficeRequestNested.Office=Sede in cui è possibile fruire del servizio
+label.COMOfficeRequestNested.AppointmentLink=Link alla funzione di prenotazione appuntamento
+label.COMOfficeRequestNested.Information=Informazioni
+
+# COMVenue
+type.COMVenue.description=Tipologia che struttura le informazioni relative a un luogo di interesse pubblico
+type.COMVenue.formatter=Luogo
+type.COMVenue.name=Luogo
+type.COMVenue.title=Luogo
+
+label.COMVenue.Name=Nome del luogo
+label.COMVenue.Name.help=Nome principale del luogo o nome con il quale il luogo è conosciuto (ad es. Colosseo)
+label.COMVenue.Image=Immagine
+label.COMVenue.Image.help=Immagine principale del luogo
+label.COMVenue.Abstract=Descrizione breve
+label.COMVenue.Abstract.help=Descrizione sintetica
+label.COMVenue.Description=Descrizione estesa
+label.COMVenue.Description.help=Descrizione del luogo e degli elementi di interesse presenti nel luogo (POI)
+label.COMVenue.Video=Galleria di video
+label.COMVenue.Service=Servizi presenti nel luogo
+label.COMVenue.Service.help=Se il luogo presenta servizi di carattere privato, descrizione testuale del servizio e link esterno al servizio. Se il luogo è sede di unità organizzativa abbiamo i servizi collegati all'unità organizzativa
+label.COMVenue.AccessMode=Modalità di accesso
+label.COMVenue.AccessMode.help=Modalità di accesso al luogo con particolare attenzione agli accessi per disabili ed eventuale descrizione di come arrivare, costi di accesso
+label.COMVenue.Latitude=GPS Latitude
+label.COMVenue.Latitude.help=Georeferenziazione del luogo e link a posizione in mappa.  
+label.COMVenue.Longitude=GPS Longitude
+label.COMVenue.Longitude.help=Georeferenziazione del luogo e link a posizione in mappa.  
+label.COMVenue.Address=Indirizzo
+label.COMVenue.Address.help=Indirizzo del luogo.
+label.COMVenue.PostalCode=CAP
+label.COMVenue.PostalCode.help=Codice di avviamento postale del luogo
+label.COMVenue.OpeningHour=Orario per il pubblico
+label.COMVenue.OpeningHour.help=Orario di apertura al pubblico del luogo ed eventuali regole di accesso (es prenotazione).
+label.COMVenue.ContactPoint=Punti di contatto
+label.COMVenue.ContactPoint.help=Telefono, mail o altri punti di contatto
+label.COMVenue.FurtherInformation=Ulteriori informazioni
+label.COMVenue.FurtherInformation.help=Ulteriori informazioni sul luogo
+
+# COMLinkNested
+label.COMLinkNested.Link=Link
+label.COMLinkNested.LinkTitle=Titolo del link
+label.COMLinkNested.LinkTarget=Destinazione del link
+label.COMLinkNested.LinkTarget.help=Imposta dove aprire il link: nella stessa scheda (Same tab) o in una nuova scheda (New tab).
+
+type.COMNewsList.description=COMNewsList - News List
+type.COMNewsList.formatter=COMNewsList - News List
+type.COMNewsList.name=COMNewsList - News List
+type.COMNewsList.title=COMNewsList - News List
+
+# COMArgument
+type.COMArgument.description=Argomento
+type.COMArgument.formatter=Argomento
+type.COMArgument.name=Argomento
+type.COMArgument.title=Argomento
+
+label.COMArgument.Title=Titolo
+label.COMArgument.Abstract=Descrizione
+label.COMArgument.Image=Immagine
+
+type.COMArgumentList.description=Lista di argomenti
+type.COMArgumentList.formatter=Lista di argomenti
+type.COMArgumentList.name=Lista di argomenti
+type.COMArgumentList.title=Lista di argomenti
+
+# COMCard
+type.COMCard.description=Card
+type.COMCard.formatter=Card
+type.COMCard.name=Card
+type.COMCard.title=Card
+
+label.COMCard.Title=Titolo
+label.COMCard.Abstract=Testo
+label.COMCard.Image=Immagine
+
+# COMLinkList
+type.COMLinkList.description=Lista di link
+type.COMLinkList.formatter=Lista di link
+type.COMLinkList.name=Lista di link
+type.COMLinkList.title=Lista di link
+
+label.COMLinkList.Title=Titolo
+
+# COMLink
+type.COMLink.description=Link
+type.COMLink.formatter=Link
+type.COMLink.name=Link
+type.COMLink.title=Link
+
+label.COMLink.Link=Link
+label.COMLink.LinkTitle=Titolo del link
+label.COMLink.LinkTarget=Destinazione del link
+label.COMLink.LinkTarget.help=Imposta dove aprire il link: nella stessa scheda (Same tab) o in una nuova scheda (New tab).
+
+# COMImage
+type.COMImage.description=Immagine
+type.COMImage.formatter=Immagine
+type.COMImage.name=Immagine
+type.COMImage.title=Immagine
+
+label.COMImage.Image=Immagine
+label.COMImage.Title=Titolo
+label.COMImage.Description=Descrizione
+label.COMImage.Caption=Didascalia
+
+# COMIdentity
+type.COMIdentity.description=Identità
+type.COMIdentity.formatter=Identità
+type.COMIdentity.name=Identità
+type.COMIdentity.title=Identità
+
+label.COMIdentity.Title=Nome
+label.COMIdentity.Address=Indirizzo
+label.COMIdentity.PostalCode=CAP
+label.COMIdentity.Town=Città
+label.COMIdentity.VATNumber=Partita IVA
+label.COMIdentity.FiscalCode=Codice fiscale
+
+# COMCardList
+type.COMCardList.description=Lista di card
+type.COMCardList.formatter=Lista di card
+type.COMCardList.name=Lista di card
+type.COMCardList.title=Lista di card
+
+label.COMCardList.Title=Titolo
+
+# COMCardNested
+label.COMCardNested.Title=Titolo
+label.COMCardNested.Abstract=Descrizione
+
+# COMPublicDocument
+type.COMPublicDocument.description=Struttura delle informazioni relative utili a presentare un documento pubblico
+type.COMPublicDocument.formatter=Documento pubblico
+type.COMPublicDocument.name=Documento pubblico
+type.COMPublicDocument.title=Documento pubblico
+
+label.COMPublicDocument.Title=Titolo
+label.COMPublicDocument.Title.help=Nome del documento. Il nome del Documento deve essere facilmente comprensibile dai cittadini.
+label.COMPublicDocument.Type=Tipo di documento
+label.COMPublicDocument.Type.help=Secondo la tassonomia prevista
+label.COMPublicDocument.Argument=Argomenti
+label.COMPublicDocument.Argument.help=Argomenti collegabili
+label.COMPublicDocument.Abstract=Descrizione breve
+label.COMPublicDocument.Abstract.help=Descrizione sintetica del documento utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarezza il documento. Non utilizzare un linguaggio ricco di riferimenti normativi
+label.COMPublicDocument.Text=Descrizione
+label.COMPublicDocument.Text.help=L'oggetto del documento, utilizzando un linguaggio semplice che possa aiutare qualsiasi utente a identificare con chiarazza il documento. Non utilizzare un linguaggio ricco di riferimenti normativi.
+label.COMPublicDocument.Document=URL documento
+label.COMPublicDocument.Document.help=Link al documento vero e proprio, in un formato scaricabile attraverso una URL.
+label.COMPublicDocument.OrganizationUnit=Ufficio responsabile del documento
+label.COMPublicDocument.OrganizationUnit.help=Link alla scheda dell'ufficio responsabile del documento
+label.COMPublicDocument.License=Licenza di distribuzione
+label.COMPublicDocument.License.help=Licenza con il quale il documento viene distribuito
+label.COMPublicDocument.Image=Immagine
+label.COMPublicDocument.Image.help=Immagine di riferimento del documento
+
+# COMDisservice
+type.COMDisservice.description=Disservizio
+type.COMDisservice.formatter=Disservizio
+type.COMDisservice.name=Disservizio
+type.COMDisservice.title=Disservizio
+
+# COMFAQ
+type.COMFAQ.description=FAQ
+type.COMFAQ.formatter=FAQ
+type.COMFAQ.name=FAQ
+type.COMFAQ.title=FAQ
+
+label.COMFAQ.Question=Domanda
+label.COMFAQ.Answer=Risposta
+type.COMEvent.description=COMEvent - Event
+type.COMEvent.formatter=COMEvent - Event
+type.COMEvent.name=COMEvent - Event
+type.COMEvent.title=COMEvent - Event
+
+label.COMAccount.AccountType=Tipo di account 

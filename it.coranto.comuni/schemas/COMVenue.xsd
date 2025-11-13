@@ -1,0 +1,145 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMLinkNested.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMImageNested.xsd"/>
+
+	<xsd:element name="COMVenueData" type="OpenCmsCOMVenueData"/>
+
+	<xsd:complexType name="OpenCmsCOMVenueData">
+		<xsd:sequence>
+			<xsd:element name="COMVenue" type="OpenCmsCOMVenue" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMVenue">
+		<xsd:sequence>
+			<xsd:element name="Name" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Image" type="OpenCmsCOMImageNested" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Abstract" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Description" type="OpenCmsHtml" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Video" type="OpenCmsCOMLinkNested" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Service" type="OpenCmsHtml" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="AccessMode" type="OpenCmsHtml" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Latitude" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Longitude" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Address" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="PostalCode" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="OpeningHour" type="OpenCmsHtml" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="ContactPoint" type="OpenCmsString" minOccurs="1" maxOccurs="unbounded"/>
+			<xsd:element name="FurtherInformation" type="OpenCmsVfsFile" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace"/>
+			</resourcebundles>
+			<mappings>
+				<mapping element="Name" mapto="property:Title"/>
+				<mapping element="Name" mapto="urlName"/>
+			</mappings>
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Name</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,70}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 70 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Image</PropertyName>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Abstract</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,160}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 160 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Description</PropertyName>
+					<Widget>HtmlWidget</Widget>
+					<WidgetConfig>importcss,css:/system/modules/it.coranto.comuni/resources/css/main.css,link</WidgetConfig>
+				</Setting>
+				<Setting>
+					<PropertyName>Service</PropertyName>
+					<Widget>HtmlWidget</Widget>
+					<WidgetConfig>importcss,css:/system/modules/it.coranto.comuni/resources/css/main.css,link</WidgetConfig>
+				</Setting>
+				<Setting>
+					<PropertyName>AccessMode</PropertyName>
+					<Widget>HtmlWidget</Widget>
+					<WidgetConfig>importcss,css:/system/modules/it.coranto.comuni/resources/css/main.css,link</WidgetConfig>
+				</Setting>
+				<Setting>
+					<PropertyName>Latitude</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>^-?\d+(\.\d+)?$</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Longitude</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>^-?\d+(\.\d+)?$</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Address</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,255}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 255 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>PostalCode</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,255}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 255 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>OpeningHour</PropertyName>
+					<Widget>HtmlWidget</Widget>
+					<WidgetConfig>importcss,css:/system/modules/it.coranto.comuni/resources/css/main.css</WidgetConfig>
+				</Setting>
+				<Setting>
+					<PropertyName>ContactPoint</PropertyName>
+					<Widget>it.coranto.widgets.DynamicSelectWidget</Widget>
+					<WidgetConfig>folderUUIDKeys=/.content/COMContactPoint|valueName=Title|language=it</WidgetConfig>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>FurtherInformation</PropertyName>
+					<Widget>file</Widget>
+					<WidgetConfig>{useformat:true,startup: '/.content/.galleries/documents'}</WidgetConfig>
+					<Search>false</Search>
+				</Setting>
+			</FieldSettings>
+			<searchsettings>
+				<searchsetting element="Abstract">
+					<solrfield targetfield="Abstract" />
+				</searchsetting>
+				<searchsetting element="Address">
+					<solrfield targetfield="Address" />
+				</searchsetting>
+				<searchsetting element="PostalCode">
+					<solrfield targetfield="PostalCode" />
+				</searchsetting>
+				<searchsetting element="OpeningHour">
+					<solrfield targetfield="OpeningHour" />
+				</searchsetting>
+			</searchsettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

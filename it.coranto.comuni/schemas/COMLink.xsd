@@ -1,0 +1,49 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+
+	<xsd:element name="COMLinkData" type="OpenCmsCOMLinkData"/>
+
+	<xsd:complexType name="OpenCmsCOMLinkData">
+		<xsd:sequence>
+			<xsd:element name="COMLink" type="OpenCmsCOMLink" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMLink">
+		<xsd:sequence>
+			<xsd:element name="Link" 		type="OpenCmsVarLink" 		minOccurs="1" 		maxOccurs="1" />	
+			<xsd:element name="LinkTitle" 		type="OpenCmsString" 		minOccurs="1" 		maxOccurs="1" />	
+			<xsd:element name="LinkTarget" 		type="OpenCmsString" 		minOccurs="1" 		maxOccurs="1" />	
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<mappings>
+				<mapping element="LinkTitle" mapto="property:Title" />
+				<mapping element="LinkTitle" mapto="urlName" />
+			</mappings>	
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Link</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>   
+				<Setting>
+					<PropertyName>LinkTarget</PropertyName>
+					<Widget>SelectorWidget</Widget>
+					<WidgetConfig>_self*:Stessa scheda|_blank:Nuova scheda</WidgetConfig>
+					<Display>singleline</Display>
+				</Setting>
+			</FieldSettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>
