@@ -1,0 +1,34 @@
+name: Build ZIP of it.coranto.comuni
+
+on:
+  # Permette di lanciare il workflow anche manualmente dalla tab Actions
+  workflow_dispatch:
+
+  # Parte automaticamente quando fai push su main e tocchi la cartella indicata
+  push:
+    branches:
+      - main
+    paths:
+      - "it.coranto.comuni/**"
+      - ".github/workflows/build-it-coranto-comuni-zip.yml"
+
+jobs:
+  build-zip:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Create ZIP of it.coranto.comuni
+        run: |
+          zip -r it.coranto.comuni.zip it.coranto.comuni
+
+      - name: Create or update 'latest' release with ZIP
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: latest
+          name: "Latest it.coranto.comuni ZIP"
+          files: it.coranto.comuni.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
