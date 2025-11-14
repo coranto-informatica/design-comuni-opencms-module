@@ -11,7 +11,7 @@ on:
       - ".github/workflows/build-it-coranto-comuni-zip.yml"
 
 permissions:
-  contents: write 
+  contents: write  
 
 jobs:
   build-zip:
@@ -31,8 +31,8 @@ jobs:
 
       - name: Prepare OpenCms module structure
         run: |
-          mkdir -p build/system/modules/it.coranto.comuni
-          cp -R it.coranto.comuni/* build/system/modules/it.coranto.comuni/
+          mkdir -p build/system/modules
+          cp -a it.coranto.comuni build/system/modules/
 
       - name: Create ZIP of module (OpenCms structure)
         run: |
@@ -42,7 +42,7 @@ jobs:
       - name: Create or update release with ZIP
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }}
+          tag_name: ${{ steps.version.outputs.tag }} 
           name: "Design Comuni OpenCms v${{ env.SOFTWARE_VERSION }}"
           files: it.coranto.comuni.zip
           body: |
