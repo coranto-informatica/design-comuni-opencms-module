@@ -1,0 +1,51 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMImageNested.xsd" />
+
+	<xsd:element name="COMArgumentData" type="OpenCmsCOMArgumentData"/>
+
+	<xsd:complexType name="OpenCmsCOMArgumentData">
+		<xsd:sequence>
+			<xsd:element name="COMArgument" type="OpenCmsCOMArgument" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMArgument">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Abstract" type="OpenCmsString" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Image" type="OpenCmsCOMImageNested" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<mappings>
+				<mapping element="Title" mapto="property:Title" />
+				<mapping element="Title" mapto="urlName" />
+			</mappings>	
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Title</PropertyName>					
+					<Widget>string</Widget>
+					<RuleRegex>.{0,70}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Massimo 70 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Abstract</PropertyName>
+					<Widget>TextareaWidget</Widget>
+					<RuleRegex>.{0,160}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Massimo 160 caratteri</Error>
+				</Setting>
+			</FieldSettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

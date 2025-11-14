@@ -1,0 +1,38 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">	
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMLinkNested.xsd"/>
+
+	<xsd:element name="COMOfficeRequestNesteds" type="OpenCmsCOMOfficeRequestNesteds"/>
+
+	<xsd:complexType name="OpenCmsCOMOfficeRequestNesteds">
+		<xsd:sequence>
+			<xsd:element name="COMOfficeRequestNested" type="OpenCmsCOMOfficeRequestNested" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMOfficeRequestNested">
+		<xsd:sequence>
+			<xsd:element name="AppointmentLink" type="OpenCmsCOMLinkNested" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="Information" type="OpenCmsString" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Information</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{0,160}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Massimo 160 caratteri</Error>
+				</Setting>   
+			</FieldSettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

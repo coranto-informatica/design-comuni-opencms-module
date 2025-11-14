@@ -1,0 +1,116 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:include schemaLocation="opencms://system/modules/it.coranto.comuni/schemas/nested/COMImageNested.xsd" />
+
+	<xsd:element name="COMPublicDocumentData" type="OpenCmsCOMPublicDocumentData"/>
+
+
+	<xsd:complexType name="OpenCmsCOMPublicDocumentData">
+		<xsd:sequence>
+			<xsd:element name="COMPublicDocument" type="OpenCmsCOMPublicDocument" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMPublicDocument">
+		<xsd:sequence>
+			<xsd:element name="Title" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Type" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Argument" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Abstract" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Image" type="OpenCmsCOMImageNested" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="Text" type="OpenCmsHtml" minOccurs="0" maxOccurs="1"/>
+			<xsd:element name="Document" type="OpenCmsVfsFile" minOccurs="1" maxOccurs="1" />
+			<xsd:element name="OrganizationUnit" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="License" type="OpenCmsString" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="required"/>
+	</xsd:complexType>
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<mappings>
+				<mapping element="Title" mapto="property:Title"/>
+				<mapping element="Title" mapto="urlName"/>
+			</mappings>
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Title</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,70}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 70 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Type</PropertyName>
+					<Widget>SelectorWidget</Widget>
+					<WidgetConfig>
+						documentoalbopretorio:Documento albo Pretorio|modulistica:Modulistica|documentofunzionamentointerno:Documento funzionamento interno|attonormativo:Atto normativo|accordotraenti:Accordo tra enti|documentoattivitapolitica:Documento attività politica|documentotecnicosupporto:Documento (tecnico) di supporto|istanza:Istanza|documentodiprogrammazionerendicontazione:Documento di programmazione e rendicontazione|dataset:Dataset
+					</WidgetConfig>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Argument</PropertyName>
+					<Widget>it.coranto.widgets.DynamicMultiSelectWidget</Widget>
+					<WidgetConfig>folderName=/.content/COMArgument/|keyName=Title|valueName=Title|language=it</WidgetConfig>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Abstract</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.{1,160}</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio, massimo 160 caratteri</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>Text</PropertyName>
+					<Widget>HtmlWidget</Widget>
+					<WidgetConfig>importcss,css:/system/modules/it.coranto.comuni/resources/css/main.css,link</WidgetConfig>
+				</Setting>
+				<Setting>
+					<PropertyName>Document</PropertyName>
+					<Widget>file</Widget>
+					<WidgetConfig>{useformat:true,startup: '/.content/.galleries/documents'}</WidgetConfig>
+					<Search>false</Search>
+				</Setting>
+				<Setting>
+					<PropertyName>OrganizationUnit</PropertyName>
+					<Widget>it.coranto.widgets.DynamicSelectWidget</Widget>
+					<WidgetConfig>folderUUIDKeys=/.content/COMOrganizationUnit/|valueName=Title|language=it</WidgetConfig>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+				<Setting>
+					<PropertyName>License</PropertyName>
+					<Widget>SelectorWidget</Widget>
+					<WidgetConfig>
+						pubblicodominio:Pubblico dominio|attribuzione:Attribuzione|effettovirale:Effetto virale|condivisioneallostessomodocopyleftnoncompatibile:Condivisione allo stesso modo / copyleft non compatibile|solousononcommerciale:Solo uso non commerciale|nonoperederivate:Non opere derivate|licenzasconosciuta:Licenza sconosciuta
+					</WidgetConfig>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>
+			</FieldSettings>
+			<searchsettings>
+				<searchsetting element="Type">
+					<solrfield targetfield="Type" />
+				</searchsetting>
+				<searchsetting element="Abstract">
+					<solrfield targetfield="Abstract" />
+				</searchsetting>
+				<searchsetting element="Argument">
+					<solrfield targetfield="Argument" />
+				</searchsetting>
+			</searchsettings>
+		</xsd:appinfo>
+	</xsd:annotation>
+
+</xsd:schema>

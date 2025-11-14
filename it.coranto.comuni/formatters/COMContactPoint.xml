@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[COMContactPoint - Contact Point]]></NiceName>
+    <Type><![CDATA[COMContactPoint]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/it.coranto.comuni/formatters/COMContactPoint.jsp]]></target>
+        <uuid>c5df30b9-3d28-11f0-a2b1-1b1fd91899eb</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[contactpointsummary]]></ContainerType>
+      </Types>
+    </Match>
+    <Display><![CDATA[display]]></Display>
+    <AutoEnabled>true</AutoEnabled>
+    <SearchContent>true</SearchContent>
+    <StrictContainers>true</StrictContainers>
+  </NewFormatter>
+</NewFormatters>

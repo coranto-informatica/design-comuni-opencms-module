@@ -1,0 +1,53 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">	
+	<xsd:include schemaLocation="opencms://opencms-xmlcontent.xsd"/>
+	<xsd:element name="COMImageNesteds" type="OpenCmsCOMImageNesteds"/>
+
+	<xsd:complexType name="OpenCmsCOMImageNesteds">
+		<xsd:sequence>
+			<xsd:element name="COMImageNested" type="OpenCmsCOMImageNested" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="OpenCmsCOMImageNested">
+		<xsd:sequence>
+			<xsd:element name="Image" 		type="OpenCmsVfsFile" 		minOccurs="1" 		maxOccurs="1" />	
+			<xsd:element name="Title" 		type="OpenCmsString" 		minOccurs="0" 		maxOccurs="1" />	
+			<xsd:element name="Description" 		type="OpenCmsString" 		minOccurs="1" 		maxOccurs="1" />	
+			<xsd:element name="Caption" 		type="OpenCmsString" 		minOccurs="0" 		maxOccurs="1" />	
+		</xsd:sequence>
+		<xsd:attribute name="language" type="OpenCmsLocale" use="optional"/>
+	</xsd:complexType>
+
+
+	<xsd:annotation>
+		<xsd:appinfo>
+			<resourcebundles>
+				<propertybundle name="it.coranto.comuni.workplace" />
+			</resourcebundles>
+			<FieldSettings>
+				<Setting>
+					<PropertyName>Image</PropertyName>
+					<Widget>imagegallery</Widget>
+					<WidgetConfig>{useformat:true,startup: '/.content/.galleries/'}</WidgetConfig>
+					<Search>false</Search>
+				</Setting>
+				<Setting>
+					<PropertyName>Title</PropertyName>
+					<Widget>string</Widget>
+				</Setting> 
+				<Setting>
+					<PropertyName>Description</PropertyName>
+					<Widget>string</Widget>
+					<RuleRegex>.+</RuleRegex>
+					<RuleType>Error</RuleType>
+					<Error>Valore obbligatorio</Error>
+				</Setting>    
+				<Setting>
+					<PropertyName>Caption</PropertyName>
+					<Widget>string</Widget>
+				</Setting>   
+			</FieldSettings>
+		</xsd:appinfo>
+	</xsd:annotation> 
+
+</xsd:schema>

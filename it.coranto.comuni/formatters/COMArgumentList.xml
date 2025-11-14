@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[COMArgumentList - Argument List]]></NiceName>
+    <Type><![CDATA[COMArgumentList]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/it.coranto.comuni/formatters/COMArgumentList.jsp]]></target>
+        <uuid>4aa72759-41e5-11f0-ae97-1b1fd91899eb</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[argumentlist]]></ContainerType>
+      </Types>
+    </Match>
+    <AutoEnabled>true</AutoEnabled>
+    <SearchContent>true</SearchContent>
+    <StrictContainers>true</StrictContainers>
+  </NewFormatter>
+</NewFormatters>

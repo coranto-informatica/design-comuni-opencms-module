@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<NewFormatters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="opencms://system/modules/org.opencms.ade.config/schemas/formatters/new_formatter.xsd">
+  <NewFormatter language="en">
+    <NiceName><![CDATA[COMNews - MainHome]]></NiceName>
+    <Type><![CDATA[COMNews]]></Type>
+    <Jsp>
+      <link type="WEAK">
+        <target><![CDATA[/system/modules/it.coranto.comuni/formatters/COMNewsMainHome.jsp]]></target>
+        <uuid>4118ce6c-55bd-11f0-b07a-1b1fd91899eb</uuid>
+      </link>
+    </Jsp>
+    <Rank><![CDATA[1000]]></Rank>
+    <Match>
+      <Types>
+        <ContainerType><![CDATA[newsmainhomedisplay]]></ContainerType>
+      </Types>
+    </Match>
+    <Display><![CDATA[display]]></Display>
+    <AutoEnabled>true</AutoEnabled>
+    <SearchContent>true</SearchContent>
+    <StrictContainers>true</StrictContainers>
+  </NewFormatter>
+</NewFormatters>
