@@ -1,10 +1,8 @@
 name: Build ZIP of it.coranto.comuni
 
 on:
-  # Permette di lanciare il workflow anche manualmente dalla tab Actions
   workflow_dispatch:
 
-  # Parte automaticamente quando fai push su main e tocchi la cartella indicata
   push:
     branches:
       - main
