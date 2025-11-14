@@ -2,6 +2,7 @@ name: Build ZIP of it.coranto.comuni
 
 on:
   workflow_dispatch:
+
   push:
     branches:
       - main
@@ -10,7 +11,7 @@ on:
       - ".github/workflows/build-it-coranto-comuni-zip.yml"
 
 permissions:
-  contents: write
+  contents: write 
 
 jobs:
   build-zip:
@@ -20,13 +21,47 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Read softwareVersion from publiccode.yml
+        id: version
+        run: |
+          VERSION=$(grep 'softwareVersion:' publiccode.yml | sed 's/.*"\(.*\)".*/\1/')
+          echo "Found softwareVersion: $VERSION"
+          echo "SOFTWARE_VERSION=$VERSION" >> $GITHUB_ENV
+          echo "tag=v$VERSION" >> $GITHUB_OUTPUT
+
       - name: Create ZIP of it.coranto.comuni
         run: |
           zip -r it.coranto.comuni.zip it.coranto.comuni
 
-      - name: Create or update 'latest' release with ZIP
+      - name: Create or update release with ZIP
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: "Latest it.coranto.comuni ZIP"
+          tag_name: ${{ steps.version.outputs.tag }}  
+          name: "Design Comuni OpenCms v${{ env.SOFTWARE_VERSION }}"
           files: it.coranto.comuni.zip
+          body: |
+            **Version:** ${{ env.SOFTWARE_VERSION }}
+
+            **Design Comuni OpenCms** is an OpenCms module implementing the official
+            design system for Italian municipalities' websites, in accordance with
+            the guidelines by Designers Italia.
+
+            The module includes templates, graphic assets and ready-to-use
+            configurations, without editorial content. It enables public bodies
+            to quickly build accessible and compliant municipal portals.
+
+            **Key Features**
+            - Compatible with OpenCms 19
+            - WCAG 2.1 AA accessibility compliant
+            - BSD-3-Clause licensed
+            - No proprietary dependencies
+
+            **Requirements**
+            - OpenCms ≥ 19.0.0
+            - Java ≥ 11
+            - Apache Tomcat ≥ 9.0
+
+            **Project Links**
+            - Repository: https://github.com/coranto-informatica/design-comuni-opencms-module
+            - Issues: https://github.com/coranto-informatica/design-comuni-opencms-module/issues
+            - Roadmap: https://github.com/coranto-informatica/design-comuni-opencms-module/milestones
