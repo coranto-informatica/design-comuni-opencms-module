@@ -42,7 +42,7 @@ jobs:
       - name: Create or update release with ZIP
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }} 
+          tag_name: ${{ steps.version.outputs.tag }}   
           name: "Design Comuni OpenCms v${{ env.SOFTWARE_VERSION }}"
           files: it.coranto.comuni.zip
           body: |
