@@ -2,13 +2,15 @@ name: Build ZIP of it.coranto.comuni
 
 on:
   workflow_dispatch:
-
   push:
     branches:
       - main
     paths:
       - "it.coranto.comuni/**"
       - ".github/workflows/build-it-coranto-comuni-zip.yml"
+
+permissions:
+  contents: write
 
 jobs:
   build-zip:
@@ -28,5 +30,3 @@ jobs:
           tag_name: latest
           name: "Latest it.coranto.comuni ZIP"
           files: it.coranto.comuni.zip
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
