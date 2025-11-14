@@ -29,26 +29,32 @@ jobs:
           echo "SOFTWARE_VERSION=$VERSION" >> $GITHUB_ENV
           echo "tag=v$VERSION" >> $GITHUB_OUTPUT
 
-      - name: Create ZIP of it.coranto.comuni
+      - name: Prepare OpenCms module structure
         run: |
-          zip -r it.coranto.comuni.zip it.coranto.comuni
+          mkdir -p build/system/modules/it.coranto.comuni
+          cp -R it.coranto.comuni/* build/system/modules/it.coranto.comuni/
+
+      - name: Create ZIP of module (OpenCms structure)
+        run: |
+          cd build
+          zip -r ../it.coranto.comuni.zip system
 
       - name: Create or update release with ZIP
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ steps.version.outputs.tag }}  
+          tag_name: ${{ steps.version.outputs.tag }}
           name: "Design Comuni OpenCms v${{ env.SOFTWARE_VERSION }}"
           files: it.coranto.comuni.zip
           body: |
             **Version:** ${{ env.SOFTWARE_VERSION }}
 
             **Design Comuni OpenCms** is an OpenCms module implementing the official
-            design system for Italian municipalities' websites, in accordance with
-            the guidelines by Designers Italia.
+            design system for Italian municipalities' websites, following the
+            Designers Italia guidelines.
 
-            The module includes templates, graphic assets and ready-to-use
-            configurations, without editorial content. It enables public bodies
-            to quickly build accessible and compliant municipal portals.
+            It provides templates, graphic assets, and ready-to-use configurations
+            without editorial content, enabling public bodies to quickly build
+            accessible and compliant municipal websites.
 
             **Key Features**
             - Compatible with OpenCms 19
