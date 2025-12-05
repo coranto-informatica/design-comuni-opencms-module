@@ -327,8 +327,8 @@ request.setAttribute("attachmentLabel", readableLabel);
 			<script
 					src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
 					integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-					crossorigin=""></script>
-			<script src="<cms:link>/system/modules/it.coranto.comuni/resources/js/map.js</cms:link>"></script>
+					crossorigin="" defer></script>
+			<script src="<cms:link>/system/modules/it.coranto.comuni/resources/js/map.js</cms:link>" defer></script>
 		</div>
 
 	</cms:bundle>
