@@ -1,3 +1,44 @@
+/* ===========================
+   FONT BOOTSTRAP ITALIA (swap)
+   =========================== */
+
+/* Titillium Web regular (400) */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/bootstrap-italia/dist/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-regular.woff2') format('woff2');
+}
+
+/* Titillium Web semibold (600) */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('../../assets/bootstrap-italia/dist/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-600.woff2') format('woff2');
+}
+
+/* Titillium Web bold (700) */
+@font-face {
+  font-family: 'Titillium Web';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('../../assets/bootstrap-italia/dist/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff2') format('woff2');
+}
+
+/* Lora regular (400) */
+@font-face {
+  font-family: 'Lora';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../../assets/bootstrap-italia/dist/fonts/Lora/lora-v20-latin-ext_latin-regular.woff2') format('woff2');
+}
+
+
 input[type=file]::file-selector-button {
   display: none;
 }
