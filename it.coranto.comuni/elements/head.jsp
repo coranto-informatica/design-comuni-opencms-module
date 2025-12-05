@@ -11,21 +11,21 @@
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>${cms.title}</title>
+<title>Comune - ${cms.title}</title>
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${cms.vfs.propertySearch[cms.requestContext.uri]['Description']}">
 
-<link rel="stylesheet" href="<cms:link>/system/modules/it.coranto.comuni/assets/bootstrap-italia/dist/css/bootstrap-italia.min.css</cms:link>">
 <link href="<cms:link>/system/modules/it.coranto.comuni/assets/css/bootstrap-italia-comuni.css</cms:link>" rel="stylesheet">
-<link href="<cms:link>/system/modules/it.coranto.comuni/resources/css/main.css</cms:link>" rel="stylesheet">
 <link
-	  rel="stylesheet"
-	  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-	  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-	  crossorigin=""
-	  >
-<link rel="stylesheet" href="<cms:link>/system/modules/it.coranto.comuni/resources/css/map.css</cms:link>">
+  rel="preload"
+  as="style"
+  href="<cms:link>/system/modules/it.coranto.comuni/resources/css/main.css</cms:link>"
+  onload="this.onload=null; this.rel='stylesheet'">
+<noscript>
+  <link rel="stylesheet" href="<cms:link>/system/modules/it.coranto.comuni/resources/css/main.css</cms:link>">
+</noscript>
+<cms:headincludes type="css" />
 
 <link rel="icon" href="<cms:link>/favicon.ico</cms:link>" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="192x192" href="<cms:link>/icons/web-app-manifest-192x192.png</cms:link>">
