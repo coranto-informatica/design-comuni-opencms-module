@@ -85,7 +85,8 @@
 				<img src="<cms:link>${value.Image.value.Image}</cms:link>" 
 					 title="${fn:escapeXml(value.Title)}" 
 					 alt="${fn:escapeXml(value.Image.value.Description)}" 
-					 class="img-fluid">
+					 class="img-fluid"
+					 fetchpriority="high">
 			</div>
 		</c:if>
 	</div>
