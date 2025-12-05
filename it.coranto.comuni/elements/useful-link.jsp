@@ -62,4 +62,4 @@
 
 </cms:bundle>
 
-<script src="<cms:link>/system/modules/it.coranto.comuni/resources/js/feedback.js</cms:link>"></script>
+<script src="<cms:link>/system/modules/it.coranto.comuni/resources/js/feedback.js</cms:link>" defer></script>
