@@ -16,6 +16,18 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="${cms.vfs.propertySearch[cms.requestContext.uri]['Description']}">
 
+<link rel="preload"
+      href="<cms:link>/system/modules/it.coranto.comuni/assets/bootstrap-italia/dist/fonts/Titillium_Web/titillium-web-v10-latin-ext_latin-700.woff2</cms:link>"
+      as="font"
+      type="font/woff2"
+      crossorigin>
+
+<link rel="preload"
+      href="<cms:link>/system/modules/it.coranto.comuni/assets/bootstrap-italia/dist/fonts/Lora/lora-v20-latin-ext_latin-regular.woff2</cms:link>"
+      as="font"
+      type="font/woff2"
+      crossorigin>
+
 <link href="<cms:link>/system/modules/it.coranto.comuni/assets/css/bootstrap-italia-comuni.css</cms:link>" rel="stylesheet">
 <link
   rel="preload"
