@@ -10,5 +10,4 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 
 <script src="<cms:link>../assets/bootstrap-italia/dist/js/bootstrap-italia.bundle.min.js</cms:link>"></script>
-<script>bootstrap.loadFonts("<cms:link>../assets/bootstrap-italia/dist/fonts</cms:link>")</script>
 <script src="<cms:link>../assets/script/scripts.js</cms:link>"></script>
