@@ -52,7 +52,8 @@ request.setAttribute("lastModifiedFormatted", lastModifiedFormatted);
 							<img src="<cms:link>${value.Image.value.Image}</cms:link>" 
 								 title="${fn:escapeXml(value.Title)}" 
 								 alt="${fn:escapeXml(value.Image.value.Description)}" 
-								 class="figure-img img-fluid" />
+								 class="figure-img img-fluid" 
+								 fetchpriority="high"/>
 							<c:if test="${not empty value.Image.value.Caption}">
 								<figcaption class="figure-caption text-center pt-3">${value.Image.value.Caption}</figcaption>
 							</c:if>
