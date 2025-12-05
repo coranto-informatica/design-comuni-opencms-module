@@ -36,7 +36,7 @@
 				<div class="img-responsive-wrapper">
 					<div class="img-responsive">
 						<div class="img-wrapper">
-							<img src="<cms:link>${value.Image.value.Image}</cms:link>" alt="{fn:escapeXml(value.Image.value.Description)}" title="{fn:escapeXml(value.Image.value.Title)}">
+							<img src="<cms:link>${value.Image.value.Image}</cms:link>" alt="{fn:escapeXml(value.Image.value.Description)}" title="{fn:escapeXml(value.Image.value.Title)}" fetchpriority="high">
 						</div>
 					</div>
 				</div>
