@@ -9,7 +9,6 @@
 
 	<c:set var="rowsPerPage" value="10" />
 	<c:set var="paramPage" value="${param.page}" />
-	<!-- Se paramPage vuoto o non numerico usa 1 -->
 	<c:choose>
 		<c:when test="${empty paramPage}">
 			<c:set var="currentPage" value="1" />
@@ -51,9 +50,8 @@
 		</c:set>
 
 		<c:set var="querysearch">
-			&defType=edismax&q=${qFuzzy}&qf=title_it^12 Abstract_it^4 Assignment_it^4&mm=1
+			&defType=edismax&q=${qFuzzy}&qf=title_${cms.locale}_s^10 Abstract_${cms.locale}^4 Argument_${cms.locale}^3 Text_${cms.locale}^3&pf=title_${cms.locale}_s^25 Abstract_${cms.locale}^8&ps=5&tie=0.2&mm=1%3C-1%202%3C-50%25%205%3C-40%25
 		</c:set>
-
 	</c:if>
 
 
