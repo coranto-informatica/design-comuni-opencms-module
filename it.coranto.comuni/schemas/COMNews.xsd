@@ -110,6 +110,9 @@
 				<searchsetting element="Argument">
 					<solrfield targetfield="Argument" />
 				</searchsetting>
+				<searchsetting element="Text">
+					<solrfield targetfield="Text" />
+				</searchsetting>
 				<searchsetting element="Image/Image">
 					<solrfield targetfield="Image" />
 				</searchsetting>
