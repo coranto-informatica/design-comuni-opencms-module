@@ -214,7 +214,7 @@ request.setAttribute("attachmentLabel", readableLabel);
 							</article>
 						</c:if>
 						<c:if test="${not empty value.By}">
-							<article id="ufficio-responsabile" class="it-page-section anchor-offset mt-5" data-audio>
+							<article id="a-cura-di" class="it-page-section anchor-offset mt-5" data-audio>
 								<h5 class="mb-3"><fmt:message key="label.by"/></h5>
 								<div class="row">
 									<c:forEach var="organizationId" items="${content.valueList.By}" varStatus="status">
