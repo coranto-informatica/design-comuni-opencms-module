@@ -18,7 +18,6 @@
 			<c:set var="currentPage" value="${paramPage}" />
 		</c:otherwise>
 	</c:choose>
-	<!-- Forza currentPage >= 1 -->
 	<c:if test="${currentPage < 1}">
 		<c:set var="currentPage" value="1" />
 	</c:if>
@@ -27,11 +26,38 @@
 	<c:set var="path" value="${cms.requestContext.siteRoot}/.content/" />
 	<c:set var="resType" value="${not empty param.resType ? param.resType : '(COMOrganizationUnit or COMPublicPerson or COMPublicDocument or COMService or COMNews or COMVenue or COMEvent)'}" />
 	<c:set var="pagesize">10</c:set>
-	<c:if test="${not empty query}">
-		<c:set var="trimmedQuery" value="${fn:trim(query)}" />
-		<c:set var="modifiedQuery" value="${fn:replace(trimmedQuery, ' ', '~2 ')}" />
-		<c:set var="querysearch" value="&q=${modifiedQuery}~2" />
+
+	<c:set var="effectiveQuery" value="${not empty query ? query : param.query}" />
+
+	<c:set var="querysearch"></c:set>
+
+	<c:if test="${not empty effectiveQuery}">
+
+		<c:set var="trimmedQuery">
+			${fn:trim(effectiveQuery)}
+		</c:set>
+
+		<c:set var="qSafe">
+			${fn:trim(
+			fn:replace(
+			fn:replace(trimmedQuery, '&#34;', ' '),
+			'&#39;', ' '
+			)
+			)}
+		</c:set>
+
+		<c:set var="qFuzzy">
+			${fn:replace(qSafe, ' ', '~1 ')}~1
+		</c:set>
+
+		<c:set var="querysearch">
+			&defType=edismax&q=${qFuzzy}&qf=title_it^12 Abstract_it^4 Assignment_it^4&mm=1
+		</c:set>
+
 	</c:if>
+
+
+
 
 	<c:set var="filterArgument">
 		<c:choose>
@@ -455,7 +481,7 @@ pageContext.setAttribute("encodedTitle", encodedTitle);
 
 			<div class="container p-0">
 				<form id="loadMoreForm" class="d-flex justify-content-center">
-					<input type="hidden" id="queryInput" name="query" value="${param.query}" />
+					<input type="hidden" id="queryInput" name="query" value="${effectiveQuery}" />
 					<input type="hidden" id="pageInput" name="page" value="${currentPage}" />
 					<input type="hidden" id="resTypeInput" name="resType" value="${resType}" />
 					<input type="hidden" id="filteredArgumentInput" name="filteredArgument" value="${filteredArgument}" />
@@ -619,12 +645,13 @@ pageContext.setAttribute("encodedTitle", encodedTitle);
 			allCheckboxes.forEach(cb => cb.checked = false);
 
 			if (isMobile) {
-				// Ricarica la pagina per il mobile
-				window.location.href = window.location.pathname;
+				const q = document.getElementById('queryInput').value || '';
+				window.location.href = window.location.pathname + (q ? ('?query=' + encodeURIComponent(q)) : '');
 			} else {
 				updateSearch();
 				updateClearButtonState();
 			}
+
 		}
 
 		if (clearButtonDesktop) {
@@ -658,18 +685,6 @@ pageContext.setAttribute("encodedTitle", encodedTitle);
 				updateClearButtonState();
 			});
 		});
-
-		// Listener per il bottone "Rimuovi tutti i filtri"
-		if (clearButton) {
-			clearButton.addEventListener('click', () => {
-				const allCheckboxes = document.querySelectorAll('input[type="checkbox"][name="category"], input[type="checkbox"][name="argument"]');
-
-				allCheckboxes.forEach(cb => cb.checked = false);
-
-				updateSearch();
-				updateClearButtonState();
-			});
-		}
 
 		// Funzione di ricerca
 		function updateSearch() {
