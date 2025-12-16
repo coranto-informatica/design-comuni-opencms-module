@@ -26,36 +26,16 @@
 	<c:set var="resType" value="${not empty param.resType ? param.resType : '(COMOrganizationUnit or COMPublicPerson or COMPublicDocument or COMService or COMNews or COMVenue or COMEvent)'}" />
 	<c:set var="pagesize">10</c:set>
 
-	<c:set var="effectiveQuery" value="${not empty query ? query : param.query}" />
+	<c:set var="effectiveQuery" value="${not empty query ? query : param.query}" /> 
+	<c:set var="querysearch"></c:set> 
 
-	<c:set var="querysearch"></c:set>
-
-	<c:if test="${not empty effectiveQuery}">
-
-		<c:set var="trimmedQuery">
-			${fn:trim(effectiveQuery)}
-		</c:set>
-
-		<c:set var="qSafe">
-			${fn:trim(
-			fn:replace(
-			fn:replace(trimmedQuery, '&#34;', ' '),
-			'&#39;', ' '
-			)
-			)}
-		</c:set>
-
-		<c:set var="qFuzzy">
-			${fn:replace(qSafe, ' ', '~1 ')}~1
-		</c:set>
-
-		<c:set var="querysearch">
-			&defType=edismax&q=${qFuzzy}&qf=title_${cms.locale}_s^10 Abstract_${cms.locale}^4 Argument_${cms.locale}^3 Text_${cms.locale}^3&pf=title_${cms.locale}_s^25 Abstract_${cms.locale}^8&ps=5&tie=0.2&mm=1%3C-1%202%3C-50%25%205%3C-40%25
-		</c:set>
+	<c:if test="${not empty effectiveQuery}"> 
+		<c:set var="trimmedQuery">${fn:trim(effectiveQuery)}</c:set>
+		<c:set var="qSafe">${fn:trim( fn:replace( fn:replace(trimmedQuery, '&#34;', ' '), '&#39;', ' ' ) )} </c:set> 
+		<c:set var="querysearch"> 
+			&defType=edismax&q=${qSafe}&qf=it_excerpt^10 Abstract_${cms.locale}^7 Text_${cms.locale}^4 content_${cms.locale}^3 title_${cms.locale}_s^1&pf=it_excerpt^30 Abstract_${cms.locale}^18&ps=3&tie=0.1&mm=2%3C75%25
+		</c:set> 
 	</c:if>
-
-
-
 
 	<c:set var="filterArgument">
 		<c:choose>
