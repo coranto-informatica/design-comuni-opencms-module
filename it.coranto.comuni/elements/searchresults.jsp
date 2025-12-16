@@ -33,7 +33,7 @@
 		<c:set var="trimmedQuery">${fn:trim(effectiveQuery)}</c:set>
 		<c:set var="qSafe">${fn:trim( fn:replace( fn:replace(trimmedQuery, '&#34;', ' '), '&#39;', ' ' ) )} </c:set> 
 		<c:set var="querysearch"> 
-			&defType=edismax&q=${qSafe}&qf=it_excerpt^10 Abstract_${cms.locale}^7 Text_${cms.locale}^4 content_${cms.locale}^3 title_${cms.locale}_s^1&pf=it_excerpt^30 Abstract_${cms.locale}^18&ps=3&tie=0.1&mm=2%3C75%25
+			&defType=edismax&q=${qSafe}&qf=title_${cms.locale}_s^20 it_excerpt^10 Abstract_${cms.locale}^7 Text_${cms.locale}^4 content_${cms.locale}^2&pf=title_${cms.locale}_s^50 it_excerpt^25 Abstract_${cms.locale}^15&ps=3&tie=0.1&mm=2%3C75%25
 		</c:set> 
 	</c:if>
 
@@ -96,7 +96,7 @@
 	<c:set var="searchconfig">
 		{
 		"ignorequery": true,
-		"extrasolrparams": "fq=parent-folders:\"${path}\"&fq=type:${resType}&fq=con_locales:${cms.locale}${filterArgument}&sort=created desc&rows=${rowsPerPage}&start=${startIndex}${querysearch}"
+		"extrasolrparams": "fq=parent-folders:\"${path}\"&fq=type:${resType}&fq=con_locales:${cms.locale}${filterArgument}&sort=score desc,created desc&rows=${rowsPerPage}&start=${startIndex}${querysearch}"
 		}
 	</c:set>
 
